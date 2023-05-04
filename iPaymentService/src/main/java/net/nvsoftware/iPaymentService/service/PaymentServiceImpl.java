@@ -37,6 +37,8 @@ public class PaymentServiceImpl implements PaymentService{
    public PaymentResponse getPaymentByOrderId(long orderId) {
       log.info("PaymentService doPayment start");
       PaymentEntity paymentEntity = paymentRepository.findByOrderId(orderId);
+
+
       PaymentResponse paymentResponse = PaymentResponse.builder()
             .paymentId(paymentEntity.getPaymentId())
             .orderId(paymentEntity.getOrderId())
